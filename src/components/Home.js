@@ -1,16 +1,20 @@
 import React from 'react'
-import "./Home.css"
+import classes from "./Home.module.css"
+import Button from './Button'
 
 function Home() {
+
+    const buttons = ["C", "9", "/", "8","7","6","*","5","4","3","+","2","1","0","-",".","Del","="];
+
   return (
-    <div className='home'>
-        <div className='inner'>
-            <div className='result'>
-                <div className='resbox'></div>
+    <div className={classes.home}>
+        <div className={classes.inner}>
+            <div className={classes.result}>
+                <div className={classes.resbox}></div>
             </div>
-        </div>
-        <div className='btns'>
-            
+            <div className={classes.btns}>
+                {buttons.map((ele,index)=> {return <Button value={ele} key={index}/>})}
+            </div>
         </div>
     </div>
   )
